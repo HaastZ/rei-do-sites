@@ -1,3 +1,8 @@
+$color_1: #ffffff;
+$color_2: #1b1734;
+$font-family_1: Verdana, Geneva, Tahoma, sans-serif;
+$background-color_1: transparent;
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 /* Hide scrollbar for IE, Edge and Firefox */
 body {
@@ -6,17 +11,15 @@ body {
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
-body::-webkit-scrollbar {
-  display: none;
-}
-
 html {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-
 svg {
   display: block;
   width: 100%;
@@ -25,7 +28,6 @@ svg {
   top: 0;
   left: 0;
 }
-
 .scrollElement {
   position: absolute;
   height: 6000px;
@@ -33,7 +35,6 @@ svg {
   top: 0;
   z-index: 0;
 }
-
 .btn {
   position: fixed;
   bottom: 5%;
@@ -43,21 +44,20 @@ svg {
   border-radius: 5px;
   font-size: 0.9rem;
   padding: 0.5rem 0.7em;
-  background-color: transparent;
-  color: #ffffff;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: $background-color_1;
+  color: $color_1;
+  font-family: $font-family_1;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
   transition: all 0.3s;
   z-index: 11;
+  &:hover {
+    background: #ffffff;
+    color: $color_2;
+  }
 }
-.btn:hover {
-  background: #ffffff;
-  color: #1b1734;
-}
-
 .btn_works {
   left: 100px;
   right: unset;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}
